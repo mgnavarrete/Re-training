@@ -73,7 +73,7 @@ for path_root in list_folders:
                     
                     # Construir la ruta completa al archivo original y la ruta de destino con el nuevo nombre
                     file_path = os.path.join(path, "cvat", filename)
-                    destination_path = os.path.join('images', new_filename)
+                    destination_path = os.path.join('H:/datasets/allData/images', new_filename)
                     
                     # Copia el archivo con el nuevo nombre al directorio 'images'
                     shutil.copy(file_path, destination_path)
