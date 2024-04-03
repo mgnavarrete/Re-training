@@ -55,7 +55,7 @@ for label in labels:
 
 print("Seleccione carpeta de imagenes...")
 
-list_folders = select_directories()
+list_folders = filedialog.askdirectory(title='Seleccione el directorio raíz')
 for path_root in list_folders:
 
     for folder_path in os.listdir(path_root):
