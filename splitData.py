@@ -55,30 +55,28 @@ for label in labels:
 
 print("Seleccione carpeta de imagenes...")
 
-list_folders = filedialog.askdirectory(title='Seleccione el directorio raíz')
-for path_root in list_folders:
-
-    for folder_path in os.listdir(path_root):
-        if folder_path.endswith('PP'):
-            # Recorrer todos los archivos en la carpeta
-            path = os.path.join(path_root, folder_path)
-            
-            for filename in tqdm(os.listdir(os.path.join(path,"cvat")),desc="Contando Imágenes"):
-                # Verifica si el nombre de archivo (sin la extensión) está en labelsClean
-                label_name = filename.split(".")[0]
-                if label_name in labelsClean:
-                    # Agrega el prefijo "F_" tanto al label como al nombre de archivo
-                    new_label_name = "F_" + label_name
-                    new_filename = "F_" + filename
-                    
-                    # Construir la ruta completa al archivo original y la ruta de destino con el nuevo nombre
-                    file_path = os.path.join(path, "cvat", filename)
-                    destination_path = os.path.join('H:/datasets/allData/images', new_filename)
-                    
-                    # Copia el archivo con el nuevo nombre al directorio 'images'
-                    shutil.copy(file_path, destination_path)
-                    # Cambiar nombre a label_name
-                    os.rename(os.path.join(labelsPath, label_name + ".txt"), os.path.join(labelsPath, new_label_name + ".txt"))
+path_root = filedialog.askdirectory(title='Seleccione el directorio raíz')
+for folder_path in os.listdir(path_root):
+    if folder_path.endswith('PP'):
+        # Recorrer todos los archivos en la carpeta
+        path = os.path.join(path_root, folder_path)
+        
+        for filename in tqdm(os.listdir(os.path.join(path,"cvat")),desc="Contando Imágenes"):
+            # Verifica si el nombre de archivo (sin la extensión) está en labelsClean
+            label_name = filename.split(".")[0]
+            if label_name in labelsClean:
+                # Agrega el prefijo "F_" tanto al label como al nombre de archivo
+                new_label_name = "F_" + label_name
+                new_filename = "F_" + filename
+                
+                # Construir la ruta completa al archivo original y la ruta de destino con el nuevo nombre
+                file_path = os.path.join(path, "cvat", filename)
+                destination_path = os.path.join('H:/datasets/allData/images', new_filename)
+                
+                # Copia el archivo con el nuevo nombre al directorio 'images'
+                shutil.copy(file_path, destination_path)
+                # Cambiar nombre a label_name
+                os.rename(os.path.join(labelsPath, label_name + ".txt"), os.path.join(labelsPath, new_label_name + ".txt"))
 
                     
 
