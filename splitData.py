@@ -2,7 +2,7 @@ import os
 import shutil
 from tkinter import filedialog
 from sklearn.model_selection import train_test_split
-import tqdm
+from tqdm import tqdm
 
 def select_directories():
     list_folders = []  

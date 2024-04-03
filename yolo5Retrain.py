@@ -11,7 +11,7 @@ print("Successful import of git:", git.__version__)
 
 # Configura tus rutas y parámetros aquí
 yolov5_repo_path = 'yolov5'  # Asegúrate de que esta sea la ruta al repositorio de YOLOv5
-data_yaml_path = 'H:\datasets\dataReTrain.yaml'  # Ruta relativa al archivo YAML desde la carpeta yolov5
+data_yaml_path = 'H:/datasets/dataReTrain.yaml'  # Ruta relativa al archivo YAML desde la carpeta yolov5
 img_size = 640
 batch_size = 8
 epochs = 10
