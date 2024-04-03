@@ -85,6 +85,15 @@ for path_root in list_folders:
 
 base_dir= "H:/datasets/allData"
 data_path = "H:/datasets"
+# Si las carpetas re-trian, re-val y re-test no existen, las crea con las sub carpetas images y labels
+if not os.path.exists(os.path.join(data_path, 're-train', 'images')):
+    os.makedirs(os.path.join(data_path, 're-train', 'images'))
+    os.makedirs(os.path.join(data_path, 're-train', 'labels'))
+    os.makedirs(os.path.join(data_path, 're-val', 'images'))
+    os.makedirs(os.path.join(data_path, 're-val', 'labels'))
+    os.makedirs(os.path.join(data_path, 're-test', 'images'))
+    os.makedirs(os.path.join(data_path, 're-test', 'labels'))
+
 print("Dividiendo los datos...")
 split_data(base_dir, data_path)
 print("Datos divididos correctamente.")
