@@ -24,7 +24,7 @@ Este comando deber ejecutarse en la cmd parado en la carpeta `Re-training`. Una 
  - Solo copia las labels, en el siguiente paso el programa copiara las imágenes correspondientes a estas labels.
 
 
-2. **Copia de imágenes y división de datos:**
+3. **Copia de imágenes y división de datos:**
  - Ejecuta el script `splitData.py`, este programa copiará las imágenes correspondientes a las labels y separará los datos en train, val y test. Este script distribuirá automáticamente las imágenes y sus etiquetas correspondientes en subcarpetas adecuadas con una distibución de:
 
  ```
@@ -38,7 +38,7 @@ Este comando deber ejecutarse en la cmd parado en la carpeta `Re-training`. Una 
 ```python
 def split_data(base_dir, data_path, train_size=0.7, val_size=0.15, test_size=0.15):
 ```
-- 
+
 ### Pasos para Ejecutar `splitData.py`
 
 a. Abre una terminal o CMD en la ubicación donde está guardado el script `splitData.py` (carpeta `Re-training`).
@@ -76,10 +76,11 @@ e. El script copiará las imágenes correspondientes a los labels copiados en `H
 
 1. **Preparación:**
 
-- Actualiza el script `yolo5Retrain.py` con las rutas correctas según tu configuración:
+- Copia el modelo que quieres re-entrenar a la carpeta `H:/Re-training/oldModels/yolo5/`
 
-  - `pathModel`: En esta variable deberás actualizar con el path absoluto del modelo que se quiere re-entrenar
-  - También puedes modificar el número de épocas en la línea 17.
+- En la variable  `nameModel` del script `yolo5Retrain.py` actualiza el nombre del modelo, poniendo **SOLO** el nombre del archivo, no el path.
+
+- También puedes modificar el número de épocas en la línea 17.
 
 2. **Reentrenamiento:**
 - Abre una terminal o CMD en la ubicación donde está guardado el script `yolo5Retrain.py` (carpeta `Re-training`)
@@ -99,9 +100,11 @@ e. El script copiará las imágenes correspondientes a los labels copiados en `H
 
 1. **Preparación:**
 
-- Actualiza el script `yolo8Retrain.py` con las rutas correctas según tu configuración:
+- Copia el modelo que quieres re-entrenar a la carpeta `H:/Re-training/oldModels/yolo8/`
 
-  - `pathModel`: En esta variable deberas actualizar con el path de modelo que se quiere reentrnar
+- En la variable  `nameModel` del script `yolo8Retrain.py` actualiza el nombre del modelo, poniendo **SOLO** el nombre del archivo, no el path.
+
+- También puedes modificar el número de épocas en la línea 5.
 
 2. **Reentrenamiento:**
 - Navega hasta la ubicación de tu script `yolo8Retrain.py` en una terminal.

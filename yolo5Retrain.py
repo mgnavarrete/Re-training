@@ -16,7 +16,7 @@ img_size = 640
 batch_size = 8
 epochs = 10
 name = 'SolarFailuresDetection'
-pathModel = '../best.pt'  # Ruta relativa al modelo preentrenado desde la carpeta yolov5
+nameModel = 'best.pt'
 
 # Cambia al directorio de YOLOv5
 os.chdir(yolov5_repo_path)
@@ -30,7 +30,7 @@ train_command = [
     '--epochs', str(epochs),
     '--data', data_yaml_path,
     '--name', name,
-    '--weights',  pathModel,
+    '--weights',  'H:/Re-training/oldModels/yolo5/'+ nameModel,
 ]
 
 # Ejecuta el entrenamiento

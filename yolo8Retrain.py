@@ -1,10 +1,13 @@
 from ultralytics import YOLO
 
 
-pathModel = 'best.pt' # Cambiar con path del modelo a reentrenar
+nameModel = 'best.pt' # Cambiar con path del modelo a reentrenar
+epochs = 50
+
 
 # Inicializar modelo
-model = YOLO(pathModel)
+
+model = YOLO("H:/Re-training/oldModels/yolo8/0"+ nameModel)
 model.info()
 
 model.info()
@@ -12,5 +15,5 @@ model.info()
 
 if __name__ == '__main__':
     
-    results = model.train(data='H:\datasets\dataReTrain.yaml', epochs=50, imgsz=640)
+    results = model.train(data='H:\datasets\dataReTrain.yaml', epochs=epochs, imgsz=640)
     results = model.val()
